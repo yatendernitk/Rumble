@@ -1,4 +1,4 @@
-defmodule Rumbl.UserView do
+defmodule RumblWeb.UserView do
   use RumblWeb, :view
   alias Rumbl.User
 
@@ -7,4 +7,9 @@ defmodule Rumbl.UserView do
     |> String.split(" ")
     |> Enum.at(0)
   end
+
+  def get_all_users() do
+    Rumbl.Repo.all(User)
+  end
+
 end
