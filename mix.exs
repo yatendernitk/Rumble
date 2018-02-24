@@ -20,7 +20,9 @@ defmodule Rumbl.Mixfile do
   def application do
     [
       mod: {Rumbl.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools],
+      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
+        :phoenix_ecto, :postgrex, :comeonin]
     ]
   end
 
@@ -41,7 +43,8 @@ defmodule Rumbl.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:mariaex, ">= 0.0.0"}
+      {:mariaex, ">= 0.0.0"},
+      {:comeonin, "~> 2.0"}
     ]
   end
 
