@@ -24,7 +24,8 @@ defmodule RumblWeb.UserController do
     case Repo.insert(changeset) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "#{user.name} created!")
+        |> Rumbl.Auth.login(user)
+        |> put_flash(:info, "#{user.name} logged in")
         |> redirect(to: user_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
