@@ -61,12 +61,12 @@ defmodule RumblWeb do
 
   def model do
     quote do
-    use Ecto.Schema
-    import Ecto
-    import Ecto.Changeset
-    import Ecto.Query, only: [from: 1, from: 2]
+      use Ecto.Schema
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
     end
-    end
+  end
 
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
